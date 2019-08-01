@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: httpclient
+  profiles:
+    active: okhttp
+feign:
+  httpclient:
+    enabled: true

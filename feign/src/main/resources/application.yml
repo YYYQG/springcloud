@@ -1,0 +1,58 @@
+#GZIP压缩
+feign:
+  compression:
+    request:
+      enabled: true #配置请求GZIP压缩
+    mime-types: text/xml,application/xml,application/json #配置压缩支持的MINE TYPE
+    min-request-size: 2048 #配置压缩数据大小的下限
+    response:
+      enabled: true #配置响应GZIP压缩
+
+#开启日志  1.properties 2.java文件
+logging:
+  level:
+    com.xxx.feign.service.HelloFeignService: debug
+
+ribbon:
+  ReadTimeout: 120000
+  ConnectTimeout: 30000
+
+#Feign Client配置
+
+#feign:
+#  client:
+#    config:
+#      feignName: #需要配置的FeignName
+#        connectTimeout: 5000
+#        readTimeout: 5000
+#        loggerLevel: full
+#        errorDecoder: com.xxx.
+#        retryer: com.xxx. #配置重试
+#        requestInterceptors: #配置拦截器
+#          - com.xxx
+#          - com.xxx
+#        decoder404: false
+#        encoder: com.xxx  #配置编码器
+#        decoder: com.xxx
+#        contract: com.xxx  #contract配置
+
+#feign:
+#  client:
+#    config:
+#      default: #所有
+#        connectTimeout: 5000
+#        readTimeout: 5000
+#        loggerLevel: full
+#        errorDecoder: com.xxx.
+#        retryer: com.xxx. #配置重试
+#        requestInterceptors: #配置拦截器
+#          - com.xxx
+#          - com.xxx
+#        decoder404: false
+#        encoder: com.xxx  #配置编码器
+#        decoder: com.xxx
+#        contract: com.xxx  #contract配置
+
+#配置文件优先于代码
+#feign.client.default-to-properties=false 改变
+
